@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Layout 布局-基础布局</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/display.css">
+    <!-- 导入Vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style type="text/css">
+        .el-header {
+            background-color: #B3C0D1;
+            color: #333;
+            line-height: 60px;
+        }
+
+        .el-aside {
+            color: #333;
+        }
+        .menuHeader{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <el-container style="height: 500px; border: 1px solid #eee">
+        <el-aside width="200px">
+            <br>
+            <br>
+            <br>
+            <el-menu :default-openeds="['1', '3']">
+                <el-menu-item-group class="menuHeader">
+                    <template slot="title">欢迎李造价</template>
+                    <el-menu-item index="1-1">进行中项目</el-menu-item>
+                    <el-menu-item index="1-2">历史项目</el-menu-item>
+                    <el-menu-item index="1-2">个人信息</el-menu-item>
+                    <el-menu-item index="1-2">成为造价师</el-menu-item>
+                </el-menu-item-group>
+            </el-menu>
+        </el-aside>
+
+        <el-container>
+            <el-header style="text-align: right; font-size: 12px">
+                <el-dropdown>
+                    <i class="el-icon-setting" style="margin-right: 15px"></i>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item>查看</el-dropdown-item>
+                        <el-dropdown-item>新增</el-dropdown-item>
+                        <el-dropdown-item>删除</el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+                <span>李造价</span>
+            </el-header>
+
+            <el-main>
+                <el-table :data="tableData">
+                    <el-table-column class="tableContent" prop="date" label="项目名称" width="140">
+                    </el-table-column>
+                    <el-table-column class="tableContent" prop="name" label="发布时间" width="120">
+                    </el-table-column>
+                    <el-table-column class="tableContent" prop="address" label="专业类型">
+                    </el-table-column>
+                    <el-table-column class="tableContent" prop="xmzt" label="项目状态" width="120">
+                    </el-table-column>
+                    <el-table-column class="tableContent" prop="shdate" label="审核通过时间" width="120">
+                    </el-table-column>
+                    <el-table-column class="tableContent" prop="jzdate" label="截止日期" width="120">
+                    </el-table-column>
+                    <el-table-column class="tableContent"  label="查看详情" width="120">
+                        <a href="http://www.baidu.com" target="_blank">查看详情</a>
+                    </el-table-column>
+                </el-table>
+            </el-main>
+        </el-container>
+    </el-container>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            const item = {
+                date: '造价项目测试1',
+                name: '2019-6-10',
+                address: '写字楼、住宅、高层住宅、厂房、四星以上酒店、学校、影剧院、医院',
+                xmzt:'进行中',
+                shdate:'2019-6-20',
+                jzdate:'2019-6-15'
+            };
+            return {
+                tableData: Array(3).fill(item)
+            }
+        }
+    })
+</script>
+
+</html>

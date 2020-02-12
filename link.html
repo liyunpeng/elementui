@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Layout 布局-基础布局</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/display.css">
+    <!-- 导入Vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<style>
+</style>
+
+<body>
+<div id="app">
+    <el-link href="https://element.eleme.io" target="_blank">默认链接</el-link>
+    <el-link type="primary">主要链接</el-link>
+    <el-link type="success">成功链接</el-link>
+    <el-link type="warning">警告链接</el-link>
+    <el-link type="danger">危险链接</el-link>
+    <el-link type="info">信息链接</el-link>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app'
+    })
+</script>
+
+</html>

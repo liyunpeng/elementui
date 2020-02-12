@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Layout 布局-基础布局</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/display.css">
+    <!-- 导入Vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<style>
+    #app{
+        width: 500px;
+        margin: 200px auto;
+    }
+    i{
+        font-size: 40px;
+    }
+</style>
+
+<body>
+<div id="app">
+    <i class="el-icon-edit"></i>
+    <i class="el-icon-share"></i>
+    <i class="el-icon-delete"></i>
+    <i class="el-icon-light-rain"></i>
+
+    <i class="el-icon-date"></i>
+    <i class="el-icon-loading"></i>
+    <i class="el-icon-view"></i>
+    <i class="el-icon-folder-add"></i>
+    <br><br>
+    <el-button type="primary" icon="el-icon-search">搜索</el-button>
+    <el-button type="primary" icon="el-icon-delete-solid">删除</el-button>
+    <el-button type="primary" icon="el-icon-scissors">裁剪</el-button>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app'
+    })
+</script>
+
+</html>

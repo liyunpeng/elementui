@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+​
+<head>
+       <meta charset="utf-8">
+       <title></title>
+       <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+       <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/display.css">
+       <!-- 导入Vue -->
+       <script src="https://unpkg.com/vue/dist/vue.js"></script>
+       <!-- 引入组件库 -->
+       <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<style>
+       .el-form {
+               width: 400px;
+           }
+</style>
+​
+<body>
+<div id="app">
+       <template>
+               <el-button type="text" @click="open">点击打开 Message Box</el-button>
+           </template>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            open() {
+                this.$alert('这是一段内容', '标题名称', {
+                    confirmButtonText: '确定',
+                    callback: action => {
+                        this.$message({
+                            type: 'info',
+                            message: `action: ${ action }`
+                        });
+                    }
+                });
+            }
+        }
+    })
+</script>
+​
+</html>
